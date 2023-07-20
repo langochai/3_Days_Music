@@ -1,5 +1,12 @@
 import express from "express";
+import multer from "multer";
 import {Controller} from "../controllers/Controller";
-export const router = express.Router()
+import FirebaseController from "../controllers/firebase.controller";
 
-router.get("/",Controller.getAll)
+const upload = multer();
+export const router = express.Router();
+
+router.get("/", Controller.getAll);
+router.post('/upload', upload.single('file'), FirebaseController.getUrlFile);
+
+export default router;
