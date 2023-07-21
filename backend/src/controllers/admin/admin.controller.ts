@@ -19,7 +19,7 @@ export class AdminController {
     }
 
     static async getUser(req, res) {
-        await Users.findById(req.params.songID)
+        await Users.findById(req.params.userId)
             .then(result => {
                 res.status(200).json({
                     message: "Success",
@@ -30,6 +30,20 @@ export class AdminController {
                 res.status(404).json({
                     message: "Error",
                     error: err
+                })
+            })
+    }
+
+    static async deleteUser(req,res){
+        await Users.deleteOne({_id:req.params.userId})
+            .then(()=>{
+                res.status(200).json({
+                    message: "Delete successfully"
+                })
+            })
+            .catch(err=>{
+                res.status(404).json({
+                    message:err.message
                 })
             })
     }
