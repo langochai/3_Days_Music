@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c1b7998-befe-48ba-bea4-152f879b6dc7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/src/controllers/admin/admin.controller.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/router/admin.router.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/controllers/Controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/controllers/Controller.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,15 +37,16 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "javascript.nodejs.core.library.configured.version": "19.8.1",
-    "javascript.nodejs.core.library.typings.version": "20.1.4",
+    "git-widget-placeholder": "master",
+    "javascript.nodejs.core.library.configured.version": "18.14.0",
+    "javascript.nodejs.core.library.typings.version": "18.14.0",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "settings.nodejs",
-    "ts.external.directory.path": "C:\\Users\\PC\\Documents\\GitHub\\Md5_case\\backend\\node_modules\\typescript\\lib",
+    "ts.external.directory.path": "D:\\Case_md5\\backend\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -69,6 +67,7 @@
       <option name="presentableId" value="Default" />
       <updated>1689905785906</updated>
       <workItem from="1689905787748" duration="5286000" />
+      <workItem from="1689922665385" duration="4276000" />
     </task>
     <servers />
   </component>
