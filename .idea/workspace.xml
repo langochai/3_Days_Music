@@ -5,11 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c1b7998-befe-48ba-bea4-152f879b6dc7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/src/controllers/admin/admin.controller.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/router/admin.router.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/controllers/Controller.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/controllers/admin/admin.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/controllers/admin/admin.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/controllers/user/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/controllers/user/user.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/router/admin.router.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/router/admin.router.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/router/router.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/router/user.router.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/router/user.router.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +71,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1689905785906</updated>
-      <workItem from="1689905787748" duration="5286000" />
+      <workItem from="1689905787748" duration="8641000" />
     </task>
     <servers />
   </component>
