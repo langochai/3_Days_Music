@@ -1,7 +1,6 @@
 import express from "express";
 import multer from "multer";
 import cors from "cors"
-import router from "./src/router/router";
 import DatabaseConnect from "./src/models/database-connect";
 import userRouter from "./src/router/user.router";
 import adminRouter from "./src/router/admin.router";
@@ -22,7 +21,6 @@ app.post('/upload', upload.single('file'), (req, res) => {
     res.json({firebase_api: "api"});
 });
 
-app.use('/api', router);
 app.use('/admin',adminRouter)
 app.use('/user', userRouter);
 

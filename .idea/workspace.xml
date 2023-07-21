@@ -5,8 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c1b7998-befe-48ba-bea4-152f879b6dc7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/backend/src/controllers/search.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/controllers/user/comment.controller.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/layout/navBar.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/layout/sidebar.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/user/home.user.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/controllers/Controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/controllers/Controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/controllers/Controller.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/controllers/admin/admin.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/controllers/admin/admin.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/controllers/user/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/controllers/user/song.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/router/admin.router.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/router/admin.router.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/router/router.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/router/user.router.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/router/user.router.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/MediaCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/MediaCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +44,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2SrXgc9FDx0BNpQZbDWQjWvHBn2" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -37,7 +57,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "Merging master",
     "javascript.nodejs.core.library.configured.version": "18.14.0",
     "javascript.nodejs.core.library.typings.version": "18.14.0",
     "node.js.detected.package.eslint": "true",
@@ -66,8 +86,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1689905785906</updated>
-      <workItem from="1689905787748" duration="5286000" />
-      <workItem from="1689922665385" duration="4276000" />
+      <workItem from="1689905787748" duration="8641000" />
+      <workItem from="1689951178589" duration="3154000" />
     </task>
     <servers />
   </component>
