@@ -3,6 +3,7 @@ import multer from "multer";
 import cors from "cors"
 import router from "./src/router/router";
 import DatabaseConnect from "./src/models/database-connect";
+import userRouter from "./src/router/user.router";
 
 const app = express();
 const upload = multer();
@@ -20,6 +21,7 @@ app.post('/upload', upload.single('file'), (req, res) => {
 });
 
 app.use('/api', router);
+app.use('/user', userRouter);
 
 app.listen(3000, () => {
     console.log('Server listening on port 3000');
