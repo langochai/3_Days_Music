@@ -3,6 +3,8 @@ import FileUpload from "./components/FileUpload.jsx";
 import MediaControlCard from "./components/MediaCard.jsx";
 import Sidebar from "./components/layout/sidebar.jsx";
 import HomeUser from "./components/user/home.user.jsx";
+import ListSong from "./components/admin/listSong.jsx";
+import NavBar from "./components/layout/navBar.jsx";
 
 export function App() {
 
@@ -10,9 +12,12 @@ export function App() {
         <>
             <div className={"body"}>
                 <Sidebar/>
-                <HomeUser/>
-                <MediaControlCard/>
+                <NavBar/>
+                <ListSong/>
+                {/*<HomeUser/>*/}
+                {/*<MediaControlCard/>*/}
             </div>
+
 
         </>
     );

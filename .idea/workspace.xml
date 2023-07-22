@@ -4,94 +4,53 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5c1b7998-befe-48ba-bea4-152f879b6dc7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/src/controllers/search.controller.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/controllers/user/comment.controller.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/layout/navBar.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/layout/sidebar.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/user/home.user.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/controllers/Controller.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/controllers/admin/admin.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/controllers/admin/admin.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/controllers/user/user.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/controllers/user/song.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/router/admin.router.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/router/admin.router.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/router/router.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/router/user.router.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/router/user.router.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/index.html" afterDir="false" />
+    <list default="true" id="66b5a7c8-6bc4-4466-b5a0-63caf2fa9e74" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/admin/listSong.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Md5_case.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/controllers/user/song.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/controllers/user/song.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/MediaCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/MediaCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/layout/navBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/layout/navBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/user/home.user.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/user/home.user.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="TypeScript File" />
-      </list>
-    </option>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProjectId" id="2SrXgc9FDx0BNpQZbDWQjWvHBn2" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Merging master",
-    "javascript.nodejs.core.library.configured.version": "18.14.0",
-    "javascript.nodejs.core.library.typings.version": "18.14.0",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
+    "git-widget-placeholder": "Merging layout",
     "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "settings.nodejs",
-    "ts.external.directory.path": "D:\\Case_md5\\backend\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+    "ts.external.directory.path": "D:\\Case_md5\\backend\\node_modules\\typescript\\lib"
   }
 }]]></component>
-  <component name="ReactDesignerToolWindowState">
-    <option name="myId2Visible">
-      <map>
-        <entry key="com.haulmont.rcb.reactComponents" value="false" />
-        <entry key="com.haulmont.rcb.reactInspector" value="false" />
-      </map>
-    </option>
-  </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="5c1b7998-befe-48ba-bea4-152f879b6dc7" name="Changes" comment="" />
-      <created>1689905785906</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1689905785906</updated>
-      <workItem from="1689905787748" duration="8641000" />
-      <workItem from="1689951178589" duration="3154000" />
-    </task>
     <servers />
   </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/backend/src/router/admin.router.ts</url>
+          <line>10</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
