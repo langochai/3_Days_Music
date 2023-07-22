@@ -11,6 +11,7 @@ import {logout} from "../../features/auth/authSlice.jsx";
 
 export default function NavBar() {
     const auth = useSelector(state => state.auth);
+    const user = useSelector(state => state.auth.userLogin);
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const handleLogout = () => {
@@ -35,6 +36,7 @@ export default function NavBar() {
                     <Typography variant="h6" component="div" sx={{flexGrow: 1}}>
                         Menu
                     </Typography>
+                    {user && <p>{user.email}</p>}
                     {!auth.isAuth ? (
                         <Link to='/login'>
                             <Button color="inherit">Login</Button>

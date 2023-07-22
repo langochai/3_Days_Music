@@ -16,8 +16,9 @@ import AuthService from "../../services/auth.service.jsx";
 import {useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {Navigate, useNavigate} from "react-router-dom";
-import {setAuth} from "../../features/auth/authSlice.jsx";
+import {setAuth, setUserLogin} from "../../features/auth/authSlice.jsx";
 import {Alert} from "@mui/material";
+import {Link as RouterLink} from "react-router-dom";
 
 function Copyright(props) {
     return (
@@ -59,6 +60,11 @@ export default function SignInSide() {
                 .then(res => {
                     let token = res.data.accessToken;
                     localStorage.setItem('token', token);
+                    const userData = {
+                        email: res.data.username,
+                        role: res.data.role,
+                    }
+                    dispatch(setUserLogin(userData));
                     dispatch(setAuth());
                     navigate('/');
                 })
@@ -150,9 +156,9 @@ export default function SignInSide() {
                                         </Link>
                                     </Grid>
                                     <Grid item>
-                                        <Link href="#" variant="body2">
+                                        <RouterLink to='/register'>
                                             {"Don't have an account? Sign Up"}
-                                        </Link>
+                                        </RouterLink>
                                     </Grid>
                                 </Grid>
                                 <Copyright sx={{mt: 5}}/>
@@ -160,7 +166,7 @@ export default function SignInSide() {
                         </Box>
                     </Grid>
                 </Grid>
-            </ThemeProvider> : <Navigate to="/" replace/> }
+            </ThemeProvider> : <Navigate to="/" replace/>}
         </>
     );
 }

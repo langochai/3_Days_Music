@@ -16,7 +16,7 @@ export class AuthController {
             const saltRounds = 10;
             const hashedPassword = await bcrypt.hash(password, saltRounds);
 
-            const newUser = new Users({username, password: hashedPassword, role});
+            const newUser = new Users({username, password: hashedPassword, role: 'user'});
             await newUser.save();
 
             res.status(201).json({message: 'Account successfully created'});
@@ -45,7 +45,9 @@ export class AuthController {
 
             res.status(200).json({
                 message: 'Logged in successfully',
-                accessToken: token
+                accessToken: token,
+                username: user.username,
+                role: user.role,
             });
         } catch (error) {
             res.status(500).json({message: 'Server error'});
