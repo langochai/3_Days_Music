@@ -1,10 +1,8 @@
 import "./App.css"
-import FileUpload from "./components/FileUpload.jsx";
 import MediaControlCard from "./components/MediaCard.jsx";
-import Sidebar from "./components/layout/sidebar.jsx";
-import HomeUser from "./components/user/home.user.jsx";
-import ListSong from "./components/admin/listSong.jsx";
-import NavBar from "./components/layout/navBar.jsx";
+import Sidebar from "./components/layout/Sidebar.jsx";
+import MainViewContainer from "./components/layout/MainViewContainer.jsx";
+import NavBar from "./components/layout/NavBar.jsx";
 
 export function App() {
 
@@ -13,12 +11,9 @@ export function App() {
             <div className={"body"}>
                 <Sidebar/>
                 <NavBar/>
-                <ListSong/>
-                {/*<HomeUser/>*/}
-                {/*<MediaControlCard/>*/}
+                <MainViewContainer/>
+                <MediaControlCard/>
             </div>
-
-
         </>
     );
 }
