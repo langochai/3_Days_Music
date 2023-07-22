@@ -14,6 +14,7 @@ export default function NavBar() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const handleLogout = () => {
+        localStorage.removeItem('token');
         dispatch(logout());
         navigate('/login');
     }
