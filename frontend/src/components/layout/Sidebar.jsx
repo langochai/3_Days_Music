@@ -1,6 +1,8 @@
 
-import {Box, Link} from '@mui/material';
+import {Box} from '@mui/material';
 import { Home } from '@mui/icons-material';
+import {Link} from "react-router-dom";
+
 export default function Sidebar (){
     return(
         <>
