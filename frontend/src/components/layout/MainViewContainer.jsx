@@ -5,7 +5,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import NavBar from "./NavBar.jsx";
 
-export default function HomeUser() {
+export default function MainViewContainer() {
     const img = [
         {
             id: 0,
@@ -45,7 +45,7 @@ export default function HomeUser() {
         }]
     return (
         <>
-            <div className={"home-user"}>
+            <div className={"main-view-container"}>
                 <NavBar/>
                 <div style={{padding: " 20px 30px ", display: "flex", flexWrap: "wrap"} }>
                     {img.map((item, index) => (

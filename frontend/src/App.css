@@ -28,13 +28,11 @@ body{
     left: 0;
 
 }
-.home-user{
+.main-view-container{
     background-color: #121212 ;
     margin-left: 240px ;
-
     border-radius: 20px;
-    height:2000px;
-
+    height:130vh;
 }
 
 

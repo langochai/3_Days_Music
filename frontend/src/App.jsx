@@ -1,7 +1,7 @@
 import "./App.css"
 import MediaControlCard from "./components/MediaCard.jsx";
 import Sidebar from "./components/layout/Sidebar.jsx";
-import HomeUser from "./components/layout/home.user.jsx";
+import MainViewContainer from "./components/layout/MainViewContainer.jsx";
 
 export function App() {
 
@@ -9,7 +9,7 @@ export function App() {
         <>
             <div className={"body"}>
                 <Sidebar/>
-                <HomeUser/>
+                <MainViewContainer/>
                 <MediaControlCard/>
             </div>
         </>
