@@ -1,71 +1,17 @@
 import "./App.css"
-import FileUpload from "./components/FileUpload.jsx";
 import MediaControlCard from "./components/MediaCard.jsx";
+import Sidebar from "./components/layout/Sidebar.jsx";
+import MainViewContainer from "./components/layout/MainViewContainer.jsx";
 
 export function App() {
 
     return (
         <>
-            <FileUpload/>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a</p>
-            <p>a e</p>
-            <MediaControlCard/>
+            <div className={"body"}>
+                <Sidebar/>
+                <MainViewContainer/>
+                <MediaControlCard/>
+            </div>
         </>
     );
 }
