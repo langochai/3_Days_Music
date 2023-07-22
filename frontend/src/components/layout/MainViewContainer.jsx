@@ -3,7 +3,6 @@ import Card from "@mui/material/Card";
 import {CardActionArea} from "@mui/material";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import NavBar from "./NavBar.jsx";
 
 export default function MainViewContainer() {
     const img = [

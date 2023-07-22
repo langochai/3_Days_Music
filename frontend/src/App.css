@@ -31,6 +31,8 @@ body{
 .main-view-container{
     background-color: #121212 ;
     margin-left: 288px ;
+    float: right;
+    width: 1215px;
     border-radius: 0px 0px 20px 20px;
     height:130vh;
 }
