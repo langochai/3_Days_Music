@@ -1,6 +1,8 @@
 import {Schema, model} from "mongoose";
 
 interface IUsers {
+    firstName: string;
+    lastName: string;
     username: string;
     password: string;
     role: string;
@@ -8,6 +10,8 @@ interface IUsers {
 }
 
 const usersSchema = new Schema<IUsers>({
+    firstName: String,
+    lastName: String,
     username: String,
     password: String,
     role: String,
