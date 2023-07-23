@@ -4,7 +4,7 @@ import {Route, Routes} from "react-router-dom";
 import SignInSide from "./pages/login/Login.jsx";
 import {useDispatch} from "react-redux";
 import {useEffect} from "react";
-import {setAuth} from "./features/auth/authSlice.jsx";
+import {setAuth} from "./redux/features/auth/authSlice.jsx";
 import SignUp from "./pages/register/Register.jsx";
 
 export function App() {

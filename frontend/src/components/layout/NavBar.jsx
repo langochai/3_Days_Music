@@ -7,7 +7,7 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import {Link, useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import {logout} from "../../features/auth/authSlice.jsx";
+import {logout} from "../../redux/features/auth/authSlice.jsx";
 
 export default function NavBar() {
     const auth = useSelector(state => state.auth);
