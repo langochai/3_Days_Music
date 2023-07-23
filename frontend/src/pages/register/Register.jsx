@@ -78,126 +78,160 @@ export default function SignUp() {
     };
 
     return (
-        <ThemeProvider theme={defaultTheme}>
+        <ThemeProvider theme={defaultTheme} sx={{backgroundColor: "black"}}>
             <Container component="main" maxWidth="xs">
                 <CssBaseline/>
-                <Box
-                    sx={{
-                        marginTop: 8,
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center',
-                    }}
-                >
-                    <img
-                        src="/them-anh-vao-day-nhe"
-                        alt="Background"
-                        style={{
-                            position: 'absolute',
-                            top: 0,
-                            left: 0,
-                            width: '100%',
-                            height: '100%',
-                            zIndex: -1,
+                <div style={{backgroundColor: "rgba(255, 255, 255,0.9)", borderRadius : "20px", color:"black", marginTop: "100px", padding: "10px" }}>
+                    <Box
+                        sx={{
+                            marginTop: 8,
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            margin : "20px 20px 20px 20px",
+                            "&.form-container": {
+                                position: "relative",
+                                zIndex: 1,
+                                backgroundColor: "#fff",
+                                padding: "20px",
+                                borderRadius: "4px",
+                                boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.1)",
+                            },
+
                         }}
-                    />
-                    <Avatar sx={{m: 1, bgcolor: 'secondary.main'}}>
-                        <img src="logo.png" alt="error" style={{width: '60px'}}/>
-                    </Avatar>
-                    <Typography component="h1" variant="h5">
-                        Sign up
-                    </Typography>
-                    <Box component="form" noValidate onSubmit={formSignUp.handleSubmit} sx={{mt: 3}}>
-                        {message.name === 'AxiosError'
-                            ? <Alert severity='error'>{message.response.data.message}</Alert>
-                            : message === ''
-                                ? null
-                                : <Alert severity="success">{message}</Alert>}
-                        <br/>
-                        <Grid container spacing={2}>
-                            <Grid item xs={12} sm={6}>
-                                <TextField
-                                    autoComplete="given-name"
-                                    name="firstName"
-                                    required
-                                    fullWidth
-                                    id="firstName"
-                                    label="First Name"
-                                    autoFocus
-                                    onChange={formSignUp.handleChange}
-                                    value={formSignUp.values.firstName}
-                                    error={formSignUp.errors.firstName && formSignUp.touched.firstName}
-                                    helperText={formSignUp.errors.firstName && formSignUp.touched.firstName ? formSignUp.errors.firstName : null}
-                                />
+                    >
+                        <img
+                            src="background-spotify.jpg"
+                            alt="Background"
+                            style={{
+                                position: "absolute",
+                                top: 0,
+                                left: 0,
+                                width: "100%",
+                                height: "100%",
+                                zIndex: -1,
+                            }}
+                        />
+                        <Avatar sx={{m: 1, bgcolor: 'secondary.main'}}>
+                            <img src="logo.png" alt="error" style={{width: '60px'}}/>
+                        </Avatar>
+                        <Typography component="h1" variant="h5">
+                            Sign up
+                        </Typography>
+                        <Box component="form" noValidate onSubmit={formSignUp.handleSubmit} sx={{mt: 3}}>
+                            {message.name === 'AxiosError'
+                                ? <Alert severity='error'>{message.response.data.message}</Alert>
+                                : message === ''
+                                    ? null
+                                    : <Alert severity="success">{message}</Alert>}
+                            <br/>
+                            <Grid container spacing={2}>
+                                <Grid item xs={12} sm={6}>
+                                    <TextField
+                                        autoComplete="given-name"
+                                        name="firstName"
+                                        required
+                                        fullWidth
+                                        id="firstName"
+                                        label="First Name"
+                                        autoFocus
+                                        InputLabelProps={{ style: { color: 'black' } }}
+                                        InputProps={{
+                                            style: { color: 'black', border: '1px solid black' },
+                                            inputProps: { style: { color: 'black' } },
+                                        }}
+                                        onChange={formSignUp.handleChange}
+                                        value={formSignUp.values.firstName}
+                                        error={formSignUp.errors.firstName && formSignUp.touched.firstName}
+                                        helperText={formSignUp.errors.firstName && formSignUp.touched.firstName ? formSignUp.errors.firstName : null}
+                                    />
+                                </Grid>
+                                <Grid item xs={12} sm={6}>
+                                    <TextField
+                                        required
+                                        fullWidth
+                                        id="lastName"
+                                        label="Last Name"
+                                        name="lastName"
+                                        autoComplete="family-name"
+                                        InputLabelProps={{ style: { color: 'black' } }}
+                                        InputProps={{
+                                            style: { color: 'black', border: '1px solid black' },
+                                            inputProps: { style: { color: 'black' } },
+                                        }}
+                                        onChange={formSignUp.handleChange}
+                                        value={formSignUp.values.lastName}
+                                        error={formSignUp.errors.lastName && formSignUp.touched.lastName}
+                                        helperText={formSignUp.errors.lastName && formSignUp.touched.lastName ? formSignUp.errors.lastName : null}
+                                    />
+                                </Grid>
+                                <Grid item xs={12}>
+                                    <TextField
+                                        required
+                                        fullWidth
+                                        id="email"
+                                        label="Email Address"
+                                        name="email"
+                                        autoComplete="email"
+                                        InputLabelProps={{ style: { color: 'black' } }}
+                                        InputProps={{
+                                            style: { color: 'black', border: '1px solid black' },
+                                            inputProps: { style: { color: 'black' } },
+                                        }}
+                                        onChange={formSignUp.handleChange}
+                                        value={formSignUp.values.email}
+                                        error={formSignUp.errors.email && formSignUp.touched.email}
+                                        helperText={formSignUp.errors.email && formSignUp.touched.email ? formSignUp.errors.email : null}
+                                    />
+                                </Grid>
+                                <Grid item xs={12}>
+                                    <TextField
+                                        required
+                                        fullWidth
+                                        name="password"
+                                        label="Password"
+                                        type="password"
+                                        id="password"
+                                        autoComplete="new-password"
+                                        InputLabelProps={{ style: { color: 'black' } }}
+                                        InputProps={{
+                                            style: { color: 'black', border: '1px solid black' },
+                                            inputProps: { style: { color: 'black' } },
+                                        }}
+                                        onChange={formSignUp.handleChange}
+                                        value={formSignUp.values.password}
+                                        error={formSignUp.errors.password && formSignUp.touched.password}
+                                        helperText={formSignUp.errors.password && formSignUp.touched.password ? formSignUp.errors.password : null}
+                                    />
+                                </Grid>
+                                <Grid item xs={12}>
+                                    <FormControlLabel
+                                        control={<Checkbox value="allowExtraEmails" color="primary"/>}
+                                        label="I agree to the terms of use"
+                                        style={{ color: 'black' }}
+                                    />
+                                </Grid>
                             </Grid>
-                            <Grid item xs={12} sm={6}>
-                                <TextField
-                                    required
-                                    fullWidth
-                                    id="lastName"
-                                    label="Last Name"
-                                    name="lastName"
-                                    autoComplete="family-name"
-                                    onChange={formSignUp.handleChange}
-                                    value={formSignUp.values.lastName}
-                                    error={formSignUp.errors.lastName && formSignUp.touched.lastName}
-                                    helperText={formSignUp.errors.lastName && formSignUp.touched.lastName ? formSignUp.errors.lastName : null}
-                                />
+
+                            <Button
+                                type="submit"
+                                fullWidth
+                                variant="contained"
+                                sx={{mt: 3, mb: 2, backgroundColor: 'green'}}
+                            >
+                                Sign Up
+                            </Button>
+                            <Grid container justifyContent="flex-end">
+                                <Grid item>
+                                    <RouterLink to='/login' style={{color : "black", textDecoration : "none"}}>
+                                        Already have an account? Sign in
+                                    </RouterLink>
+                                </Grid>
                             </Grid>
-                            <Grid item xs={12}>
-                                <TextField
-                                    required
-                                    fullWidth
-                                    id="email"
-                                    label="Email Address"
-                                    name="email"
-                                    autoComplete="email"
-                                    onChange={formSignUp.handleChange}
-                                    value={formSignUp.values.email}
-                                    error={formSignUp.errors.email && formSignUp.touched.email}
-                                    helperText={formSignUp.errors.email && formSignUp.touched.email ? formSignUp.errors.email : null}
-                                />
-                            </Grid>
-                            <Grid item xs={12}>
-                                <TextField
-                                    required
-                                    fullWidth
-                                    name="password"
-                                    label="Password"
-                                    type="password"
-                                    id="password"
-                                    autoComplete="new-password"
-                                    onChange={formSignUp.handleChange}
-                                    value={formSignUp.values.password}
-                                    error={formSignUp.errors.password && formSignUp.touched.password}
-                                    helperText={formSignUp.errors.password && formSignUp.touched.password ? formSignUp.errors.password : null}
-                                />
-                            </Grid>
-                            <Grid item xs={12}>
-                                <FormControlLabel
-                                    control={<Checkbox value="allowExtraEmails" color="primary"/>}
-                                    label="I agree to the terms of use"
-                                />
-                            </Grid>
-                        </Grid>
-                        <Button
-                            type="submit"
-                            fullWidth
-                            variant="contained"
-                            sx={{mt: 3, mb: 2, backgroundColor: 'green'}}
-                        >
-                            Sign Up
-                        </Button>
-                        <Grid container justifyContent="flex-end">
-                            <Grid item>
-                                <RouterLink to='/login'>
-                                    Already have an account? Sign in
-                                </RouterLink>
-                            </Grid>
-                        </Grid>
+                        </Box>
                     </Box>
-                </Box>
-                <Copyright sx={{mt: 5}}/>
+                </div>
+                <Copyright sx={{mt: 5,color : "white"}}/>
             </Container>
         </ThemeProvider>
     );
