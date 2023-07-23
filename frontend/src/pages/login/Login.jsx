@@ -69,10 +69,16 @@ export default function SignInSide() {
                     navigate('/');
                 })
                 .catch(err => {
-                    setErrMessage(err.response.data.message);
+                    showErrMessage(err.response.data.message);
                 })
         }
     })
+    const showErrMessage = (msg) => {
+        setErrMessage(msg);
+        setTimeout(() => {
+            setErrMessage('');
+        }, 3000);
+    };
 
     return (
         <>
@@ -109,8 +115,8 @@ export default function SignInSide() {
                             <Typography component="h1" variant="h5">
                                 Log in
                             </Typography>
-                            {errMessage && <Alert severity='error'>{errMessage}</Alert>}
                             <Box component="form" noValidate onSubmit={formLogin.handleSubmit} sx={{mt: 1}}>
+                                {errMessage && <Alert severity='error'>{errMessage}</Alert>}
                                 <TextField
                                     margin="normal"
                                     required

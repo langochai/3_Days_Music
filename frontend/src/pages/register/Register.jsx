@@ -7,10 +7,15 @@ import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import {createTheme, ThemeProvider} from '@mui/material/styles';
+import {useFormik} from "formik";
+import * as Yup from 'yup';
+import {useState} from "react";
+import AuthService from "../../services/auth.service.jsx";
+import {Link as RouterLink} from "react-router-dom";
+import {Alert} from "@mui/material";
 
 function Copyright(props) {
     return (
@@ -26,15 +31,50 @@ function Copyright(props) {
 }
 
 const defaultTheme = createTheme();
+const SignUpSchema = Yup.object().shape({
+    firstName: Yup.string()
+        .required('First Name is required'),
+    lastName: Yup.string()
+        .required('Last Name is required'),
+    email: Yup.string()
+        .email('Invalid email address')
+        .required('Email is required'),
+    password: Yup.string()
+        .min(6, 'Password must be at least 6 characters')
+        .required('Password is required'),
+});
 
 export default function SignUp() {
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        const data = new FormData(event.currentTarget);
-        console.log({
-            email: data.get('email'),
-            password: data.get('password'),
-        });
+    const [message, setMessage] = useState('');
+    const formSignUp = useFormik({
+        initialValues: {
+            firstName: '',
+            lastName: '',
+            email: '',
+            password: ''
+        },
+        validationSchema: SignUpSchema,
+        onSubmit: values => {
+            let data = {
+                firstName: values.firstName,
+                lastName: values.lastName,
+                username: values.email,
+                password: values.password,
+            }
+            AuthService.register(data)
+                .then(res => {
+                    showMessage(res.data.message);
+                })
+                .catch(err => {
+                    showMessage(err);
+                })
+        }
+    })
+    const showMessage = (msg) => {
+        setMessage(msg);
+        setTimeout(() => {
+            setMessage('');
+        }, 3000);
     };
 
     return (
@@ -49,13 +89,31 @@ export default function SignUp() {
                         alignItems: 'center',
                     }}
                 >
+                    <img
+                        src="/them-anh-vao-day-nhe"
+                        alt="Background"
+                        style={{
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            width: '100%',
+                            height: '100%',
+                            zIndex: -1,
+                        }}
+                    />
                     <Avatar sx={{m: 1, bgcolor: 'secondary.main'}}>
-                        <LockOutlinedIcon/>
+                        <img src="logo.png" alt="error" style={{width: '60px'}}/>
                     </Avatar>
                     <Typography component="h1" variant="h5">
                         Sign up
                     </Typography>
-                    <Box component="form" noValidate onSubmit={handleSubmit} sx={{mt: 3}}>
+                    <Box component="form" noValidate onSubmit={formSignUp.handleSubmit} sx={{mt: 3}}>
+                        {message.name === 'AxiosError'
+                            ? <Alert severity='error'>{message.response.data.message}</Alert>
+                            : message === ''
+                                ? null
+                                : <Alert severity="success">{message}</Alert>}
+                        <br/>
                         <Grid container spacing={2}>
                             <Grid item xs={12} sm={6}>
                                 <TextField
@@ -66,6 +124,10 @@ export default function SignUp() {
                                     id="firstName"
                                     label="First Name"
                                     autoFocus
+                                    onChange={formSignUp.handleChange}
+                                    value={formSignUp.values.firstName}
+                                    error={formSignUp.errors.firstName && formSignUp.touched.firstName}
+                                    helperText={formSignUp.errors.firstName && formSignUp.touched.firstName ? formSignUp.errors.firstName : null}
                                 />
                             </Grid>
                             <Grid item xs={12} sm={6}>
@@ -76,6 +138,10 @@ export default function SignUp() {
                                     label="Last Name"
                                     name="lastName"
                                     autoComplete="family-name"
+                                    onChange={formSignUp.handleChange}
+                                    value={formSignUp.values.lastName}
+                                    error={formSignUp.errors.lastName && formSignUp.touched.lastName}
+                                    helperText={formSignUp.errors.lastName && formSignUp.touched.lastName ? formSignUp.errors.lastName : null}
                                 />
                             </Grid>
                             <Grid item xs={12}>
@@ -86,6 +152,10 @@ export default function SignUp() {
                                     label="Email Address"
                                     name="email"
                                     autoComplete="email"
+                                    onChange={formSignUp.handleChange}
+                                    value={formSignUp.values.email}
+                                    error={formSignUp.errors.email && formSignUp.touched.email}
+                                    helperText={formSignUp.errors.email && formSignUp.touched.email ? formSignUp.errors.email : null}
                                 />
                             </Grid>
                             <Grid item xs={12}>
@@ -97,12 +167,16 @@ export default function SignUp() {
                                     type="password"
                                     id="password"
                                     autoComplete="new-password"
+                                    onChange={formSignUp.handleChange}
+                                    value={formSignUp.values.password}
+                                    error={formSignUp.errors.password && formSignUp.touched.password}
+                                    helperText={formSignUp.errors.password && formSignUp.touched.password ? formSignUp.errors.password : null}
                                 />
                             </Grid>
                             <Grid item xs={12}>
                                 <FormControlLabel
                                     control={<Checkbox value="allowExtraEmails" color="primary"/>}
-                                    label="I want to receive inspiration, marketing promotions and updates via email."
+                                    label="I agree to the terms of use"
                                 />
                             </Grid>
                         </Grid>
@@ -110,15 +184,15 @@ export default function SignUp() {
                             type="submit"
                             fullWidth
                             variant="contained"
-                            sx={{mt: 3, mb: 2}}
+                            sx={{mt: 3, mb: 2, backgroundColor: 'green'}}
                         >
                             Sign Up
                         </Button>
                         <Grid container justifyContent="flex-end">
                             <Grid item>
-                                <Link href="#" variant="body2">
+                                <RouterLink to='/login'>
                                     Already have an account? Sign in
-                                </Link>
+                                </RouterLink>
                             </Grid>
                         </Grid>
                     </Box>
