@@ -1,9 +1,10 @@
-import CardContent from "@mui/material/CardContent";
-import Card from "@mui/material/Card";
-import {CardActionArea} from "@mui/material";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
+// import CardContent from "@mui/material/CardContent";
+// import Card from "@mui/material/Card";
+// import {CardActionArea} from "@mui/material";
+// import CardMedia from "@mui/material/CardMedia";
+// import Typography from "@mui/material/Typography";
 import NavBar from "./NavBar.jsx";
+import MusicListAll from "../MusicListAll.jsx";
 
 export default function MainViewContainer() {
     const img = [
@@ -48,28 +49,29 @@ export default function MainViewContainer() {
             <div className={"main-view-container"}>
                 <NavBar/>
                 <div style={{padding: " 20px 30px ", display: "flex", flexWrap: "wrap"} }>
-                    {img.map((item, index) => (
-                        <Card key={index} sx={{margin: "20px", maxWidth: 345, backgroundColor: "#202020",color:"white"}}>
-                            <CardActionArea>
-                                <CardMedia
+                    <MusicListAll/>
+                    {/*{img.map((item, index) => (*/}
+                    {/*    <Card key={index} sx={{margin: "20px", maxWidth: 345, backgroundColor: "#202020",color:"white"}}>*/}
+                    {/*        <CardActionArea>*/}
+                    {/*            <CardMedia*/}
 
-                                    component="img"
-                                    height="140"
-                                    image={item.src}
-                                    alt="green iguana"
-                                />
-                                <CardContent>
-                                    <Typography gutterBottom variant="h5" fontWeight="bold" component="div">
-                                        {item.title}
-                                    </Typography>
-                                    <Typography variant="body2" color="white">
-                                        Lizards are a widespread group of squamate reptiles, with over 6,000
-                                        species, ranging across all continents except Antarctica
-                                    </Typography>
-                                </CardContent>
-                            </CardActionArea>
-                        </Card>
-                    ))}
+                    {/*                component="img"*/}
+                    {/*                height="140"*/}
+                    {/*                image={item.src}*/}
+                    {/*                alt="green iguana"*/}
+                    {/*            />*/}
+                    {/*            <CardContent>*/}
+                    {/*                <Typography gutterBottom variant="h5" fontWeight="bold" component="div">*/}
+                    {/*                    {item.title}*/}
+                    {/*                </Typography>*/}
+                    {/*                <Typography variant="body2" color="white">*/}
+                    {/*                    Lizards are a widespread group of squamate reptiles, with over 6,000*/}
+                    {/*                    species, ranging across all continents except Antarctica*/}
+                    {/*                </Typography>*/}
+                    {/*            </CardContent>*/}
+                    {/*        </CardActionArea>*/}
+                    {/*    </Card>*/}
+                    {/*))}*/}
                 </div>
             </div>
         </>
