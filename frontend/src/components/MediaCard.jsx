@@ -54,16 +54,18 @@ export default function MediaControlCard() {
                         {tracks[currentTrackIndex].artist}
                     </Typography>
                 </CardContent>
-                <Box sx={{display: 'flex', alignItems: 'center', pl: 1, pb: 1}}>
+                <Box sx={{display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
                     <AudioPlayer
                         src={tracks[currentTrackIndex].src}
                         layout="stacked-reverse"
                         style={{backgroundColor : "black", color: "white"}}
                         showSkipControls={true}
-                        showJumpControls={false}
+                        showJumpControls={true}
                         onClickPrevious={handlePreTrack}
                         onClickNext={handleNextTrack}
                         onEnded={handleNextTrack}
+
+
                     />
                 </Box>
             </Box>

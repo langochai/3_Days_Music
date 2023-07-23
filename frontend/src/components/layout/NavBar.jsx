@@ -5,25 +5,46 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
+import {Link, useNavigate} from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux";
+import {logout} from "../../features/auth/authSlice.jsx";
 
 export default function NavBar() {
+    const auth = useSelector(state => state.auth);
+    const user = useSelector(state => state.auth.userLogin);
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const handleLogout = () => {
+        localStorage.removeItem('token');
+        dispatch(logout());
+        navigate('/login');
+    }
+
     return (
-        <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="static" sx={{backgroundColor:"#121212", borderRadius:" 20px 20px 0px 0px",marginLeft: "288px", width: "1215px",float: "right"}}>
+        <Box sx={{flexGrow: 1}}>
+            <AppBar position="static" sx={{backgroundColor: "#121212",marginLeft: "288px" , borderRadius: "20px 20px 0px 0px" ,width : "1216px"}}>
                 <Toolbar>
                     <IconButton
                         size="large"
                         edge="start"
                         color="inherit"
                         aria-label="menu"
-                        sx={{ mr: 2 }}
+                        sx={{mr: 2}}
                     >
-                        <MenuIcon />
+                        <MenuIcon/>
                     </IconButton>
-                    <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                    <Typography variant="h6" component="div" sx={{flexGrow: 1}}>
                         Menu
                     </Typography>
-                    <Button color="inherit">Login</Button>
+                    {user && <p>{user.email}</p>}
+                    {!auth.isAuth ? (
+                        <Link to='/login'>
+                            <Button color="inherit">Login</Button>
+                        </Link>
+                    ) : (
+                        <Button color="inherit" onClick={handleLogout}>Logout</Button>
+                    )}
+
                 </Toolbar>
             </AppBar>
         </Box>

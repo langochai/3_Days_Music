@@ -5,6 +5,7 @@ import DatabaseConnect from "./src/models/database-connect";
 import userRouter from "./src/router/user.router";
 import adminRouter from "./src/router/admin.router";
 import bodyParser from "body-parser";
+import authRouter from "./src/router/auth.router";
 
 const app = express();
 const upload = multer();
@@ -23,6 +24,7 @@ app.post('/upload', upload.single('file'), (req, res) => {
 
 app.use('/admin',adminRouter)
 app.use('/user', userRouter);
+app.use('/api', authRouter);
 
 app.listen(3000, () => {
     console.log('Server listening on port 3000');
