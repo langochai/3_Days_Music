@@ -46,6 +46,8 @@ export class AuthController {
             res.status(200).json({
                 message: 'Logged in successfully!',
                 accessToken: token,
+                firstName: user.firstName,
+                lastName: user.lastName,
                 username: user.username,
                 role: user.role,
             });

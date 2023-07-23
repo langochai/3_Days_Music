@@ -16,7 +16,7 @@ import AuthService from "../../services/auth.service.jsx";
 import {useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {Navigate, useNavigate} from "react-router-dom";
-import {setAuth, setUserLogin} from "../../features/auth/authSlice.jsx";
+import {setAuth} from "../../features/auth/authSlice.jsx";
 import {Alert} from "@mui/material";
 import {Link as RouterLink} from "react-router-dom";
 
@@ -61,10 +61,13 @@ export default function SignInSide() {
                     let token = res.data.accessToken;
                     localStorage.setItem('token', token);
                     const userData = {
+                        firstName: res.data.firstName,
+                        lastName: res.data.lastName,
                         email: res.data.username,
                         role: res.data.role,
                     }
-                    dispatch(setUserLogin(userData));
+                    const userDataJSON = JSON.stringify(userData);
+                    localStorage.setItem('userLogin', userDataJSON);
                     dispatch(setAuth());
                     navigate('/');
                 })
