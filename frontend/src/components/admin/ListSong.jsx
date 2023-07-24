@@ -67,7 +67,7 @@ export default function ListSong() {
                                     <TableCell sx={{color: "white"}} align="left"><EditSong
                                         id={song._id} song={song} setListSong={setListSong}
                                     /></TableCell>
-                                    <TableCell sx={{color: "white"}} align="left"><Button sx={{color:"red"}}><Delete
+                                    <TableCell sx={{color: "white"}} align="left"><Button sx={{color:"red", '&:hover': {color: 'grey'}}}><Delete
                                         onClick={() => deleteSong(song._id)}/></Button></TableCell>
                                 </TableRow>
                             ))}
