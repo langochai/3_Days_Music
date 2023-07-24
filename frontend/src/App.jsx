@@ -10,7 +10,8 @@ import ManagerSong from "./pages/admin/ManagerSong.jsx";
 
 export function App() {
     const dispatch = useDispatch();
-
+    const userLoginJSON = localStorage.getItem('userLogin');
+    const userLogin = JSON.parse(userLoginJSON);
     useEffect(() => {
         let token = localStorage.getItem('token');
         if (token) {
@@ -23,8 +24,11 @@ export function App() {
             <Route path='/' element={<Home/>}/>
             <Route path='/login' element={<SignInSide/>}/>
             <Route path='/register' element={<SignUp/>}/>
-            <Route path='/admin/list-song' element={<ManagerSong/>}/>
-            <Route path="*"  element={<Navigate to="/" />} />
+            {userLogin.role && userLogin.role === 'admin' ? (
+                <Route path='/admin/list-song' element={<ManagerSong/>}/>
+            ) : (
+                <Route path="*" element={<Navigate to="/"/>}/>
+            )}
         </Routes>
     );
 }

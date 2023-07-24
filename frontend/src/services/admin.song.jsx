@@ -15,6 +15,9 @@ class AdminSong {
     static async getOneSong(id) {
         return await axios.get('http://localhost:3000/admin/song/'+ id);
     }
+    static async addSong(data) {
+        return await axios.post('http://localhost:3000/admin/song/', data);
+    }
 }
 
 export default AdminSong;

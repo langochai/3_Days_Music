@@ -6,11 +6,12 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import {Delete,Add} from "@mui/icons-material";
+import {Delete, Add} from "@mui/icons-material";
 import AdminSong from "../../services/admin.song.jsx";
 import Button from "@mui/material/Button";
 import EditSong from "./EditSong.jsx";
 import {Link} from "react-router-dom";
+import AddSong from "./AddSong.jsx";
 
 export default function ListSong() {
     const [listSong, setListSong] = useState([])
@@ -40,7 +41,7 @@ export default function ListSong() {
 
         <div className={"main-view-container"}>
             <div style={{padding: " 70px 16px "}}>
-                <Link><Button sx={{backgroundColor:"blue",marginBottom:"10px"}}><Add/></Button></Link>
+                <AddSong setListSong={setListSong}/>
                 <TableContainer component={Paper}>
                     <Table sx={{minWidth: 650, backgroundColor: "black"}} aria-label="simple table">
                         <TableHead>
@@ -66,7 +67,7 @@ export default function ListSong() {
                                     <TableCell sx={{color: "white"}} align="left"><EditSong
                                         id={song._id} song={song} setListSong={setListSong}
                                     /></TableCell>
-                                    <TableCell sx={{color: "white"}} align="left"><Button><Delete
+                                    <TableCell sx={{color: "white"}} align="left"><Button sx={{color:"red"}}><Delete
                                         onClick={() => deleteSong(song._id)}/></Button></TableCell>
                                 </TableRow>
                             ))}
