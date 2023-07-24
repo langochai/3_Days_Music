@@ -5,7 +5,6 @@ import {Link} from 'react-router-dom';
 export default function Sidebar() {
     const userLoginJSON = localStorage.getItem('userLogin');
     const userLogin = JSON.parse(userLoginJSON).role;
-    console.log(userLogin)
     return (
         <>
             <div className={"Left-sideBar"}>

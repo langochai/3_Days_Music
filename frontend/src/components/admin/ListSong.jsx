@@ -1,5 +1,4 @@
 import {useEffect, useState} from "react";
-import axios from 'axios';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -7,55 +6,68 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import {Delete, Edit} from "@mui/icons-material";
+import {Delete} from "@mui/icons-material";
+import AdminSong from "../../services/admin.song.jsx";
+import Button from "@mui/material/Button";
+import EditSong from "./EditSong.jsx";
 
 export default function ListSong() {
     const [listSong, setListSong] = useState([])
-    useEffect(() => {
-        // Gọi API để lấy dữ liệu
-        axios.get('http://localhost:3000/user/song/list')
-            .then(response => {
-                setListSong(response.data.data);
+    const loadSongs = () => {
+        AdminSong.getSong()
+            .then((res) => {
+                setListSong(res.data.data);
             })
-            .catch(error => {
-                console.error('Lỗi khi gọi API:', error);
+            .catch((err) => {
+                console.log(err);
             });
-    }, []);
-    let rows = []
-    rows = listSong
+    };
 
+    useEffect(() => {
+        loadSongs();
+    }, []);
+    const deleteSong = (id) => {
+        AdminSong.delete(id)
+            .then(() => {
+                loadSongs();
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    }
     return (
 
         <div className={"main-view-container"}>
-            <div style={{padding: " 70px 16px " }}>
+            <div style={{padding: " 70px 16px "}}>
                 <TableContainer component={Paper}>
-                    <Table sx={{ minWidth: 650, backgroundColor : "black" }} aria-label="simple table">
-                        <TableHead >
-                            <TableRow >
-                                <TableCell sx={{ color : "white"}}>id</TableCell>
-                                <TableCell sx={{ color : "white"}} align="left">Song Name</TableCell>
-                                <TableCell sx={{ color : "white"}} align="left">Genre</TableCell>
-                                <TableCell sx={{ color : "white"}} align="left">Song Writer</TableCell>
-                                <TableCell sx={{ color : "white"}} align="left">Vocalist</TableCell>
-                                <TableCell sx={{ color : "white"}} align="left">Edit</TableCell>
-                                <TableCell sx={{ color : "white"}} align="left">Delete</TableCell>
+                    <Table sx={{minWidth: 650, backgroundColor: "black"}} aria-label="simple table">
+                        <TableHead>
+                            <TableRow>
+                                <TableCell sx={{color: "white"}}>id</TableCell>
+                                <TableCell sx={{color: "white"}} align="left">Song Name</TableCell>
+                                <TableCell sx={{color: "white"}} align="left">Genre</TableCell>
+                                <TableCell sx={{color: "white"}} align="left">Song Writer</TableCell>
+                                <TableCell sx={{color: "white"}} align="left">Vocalist</TableCell>
+                                <TableCell sx={{color: "white"}} align="left">Edit</TableCell>
+                                <TableCell sx={{color: "white"}} align="left">Delete</TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {rows.map((row) => (
+                            {listSong.map((song) => (
                                 <TableRow
-                                    key={row._id}
-                                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                                    key={song._id}
+                                    sx={{'&:last-child td, &:last-child th': {border: 0}}}
                                 >
-                                    <TableCell sx={{ color : "white"}} component="th" scope="row">
-                                        {row._id}
+                                    <TableCell sx={{color: "white"}} component="th" scope="row">
+                                        {song._id}
                                     </TableCell>
-                                    <TableCell sx={{ color : "white"}} align="left">{row.songName}</TableCell>
-                                    <TableCell sx={{ color : "white"}} align="left">{row.genre}</TableCell>
-                                    <TableCell sx={{ color : "white"}} align="left">{row.songWriter}</TableCell>
-                                    <TableCell sx={{ color : "white"}} align="left">{row.vocalist}</TableCell>
-                                    <TableCell sx={{ color : "white"}} align="left"><Edit/></TableCell>
-                                    <TableCell sx={{ color : "white"}} align="left"><Delete/></TableCell>
+                                    <TableCell sx={{color: "white"}} align="left">{song.songName}</TableCell>
+                                    <TableCell sx={{color: "white"}} align="left">{song.genre}</TableCell>
+                                    <TableCell sx={{color: "white"}} align="left">{song.songWriter}</TableCell>
+                                    <TableCell sx={{color: "white"}} align="left">{song.vocalist}</TableCell>
+                                    <TableCell sx={{color: "white"}} align="left"><EditSong  id={song._id}/></TableCell>
+                                    <TableCell sx={{color: "white"}} align="left"><Button><Delete
+                                        onClick={() => deleteSong(song._id)}/></Button></TableCell>
                                 </TableRow>
                             ))}
                         </TableBody>
