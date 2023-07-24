@@ -62,85 +62,86 @@ export default function EditSong(props) {
 
     return (
         <div>
-            <Button onClick={handleOpen}><Edit/></Button>
-            <Modal
+            <Button onClick={handleOpen}><Edit sx={{'&:hover': {color: 'grey'}}}/></Button>
+                <Modal
                 open={open}
                 onClose={handleClose}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
-            >
+                >
                 <Box component="form" onSubmit={formEdit.handleSubmit} noValidate sx={style}>
-                    <h1>Edit this song</h1>
-                    <TextField
-                        margin="normal"
-                        required
-                        fullWidth
-                        value={formEdit.values.songName}
-                        onChange={formEdit.handleChange}
-                        id="songName"
-                        label="Song Name"
-                        name="songName"
-                        autoComplete="songName"
-                        autoFocus
-                    />
-                    <TextField
-                        margin="normal"
-                        required
-                        fullWidth
-                        value={formEdit.values.genre}
-                        onChange={formEdit.handleChange}
-                        id="genre"
-                        label="Genre"
-                        name="genre"
-                        autoComplete="genre"
-                        autoFocus
-                    />
-                    <TextField
-                        margin="normal"
-                        required
-                        fullWidth
-                        value={formEdit.values.composer}
-                        onChange={formEdit.handleChange}
-                        id="composer"
-                        label="Composer"
-                        name="composer"
-                        autoComplete="composer"
-                        autoFocus
-                    />
-                    <TextField
-                        margin="normal"
-                        required
-                        fullWidth
-                        value={formEdit.values.songWriter}
-                        onChange={formEdit.handleChange}
-                        id="songWriter"
-                        label="Song Writer"
-                        name="songWriter"
-                        autoComplete="songWriter"
-                        autoFocus
-                    />
-                    <TextField
-                        margin="normal"
-                        required
-                        fullWidth
-                        value={formEdit.values.vocalist}
-                        onChange={formEdit.handleChange}
-                        id="vocalist"
-                        label="Vocalist"
-                        name="vocalist"
-                        autoComplete="vocalist"
-                        autoFocus
-                    />
-                    <Button
-                        type="submit"
-                        fullWidth
-                        variant="contained"
-                        sx={{mt: 3, mb: 2, backgroundColor: 'green'}}
-                    >
-                        Save
-                    </Button>
-                </Box>
-            </Modal>
-        </div>
-    );
+                <h1>Edit this song</h1>
+                <TextField
+                margin="normal"
+                required
+                fullWidth
+                value={formEdit.values.songName}
+                                               onChange={formEdit.handleChange}
+                                               id="songName"
+                                               label="Song Name"
+                                               name="songName"
+                                               autoComplete="songName"
+                                               autoFocus
+            />
+                <TextField
+                    margin="normal"
+                    required
+                    fullWidth
+                    value={formEdit.values.genre}
+                    onChange={formEdit.handleChange}
+                    id="genre"
+                    label="Genre"
+                    name="genre"
+                    autoComplete="genre"
+                    autoFocus
+                />
+                <TextField
+                    margin="normal"
+                    required
+                    fullWidth
+                    value={formEdit.values.composer}
+                    onChange={formEdit.handleChange}
+                    id="composer"
+                    label="Composer"
+                    name="composer"
+                    autoComplete="composer"
+                    autoFocus
+                />
+                <TextField
+                    margin="normal"
+                    required
+                    fullWidth
+                    value={formEdit.values.songWriter}
+                    onChange={formEdit.handleChange}
+                    id="songWriter"
+                    label="Song Writer"
+                    name="songWriter"
+                    autoComplete="songWriter"
+                    autoFocus
+                />
+                <TextField
+                    margin="normal"
+                    required
+                    fullWidth
+                    value={formEdit.values.vocalist}
+                    onChange={formEdit.handleChange}
+                    id="vocalist"
+                    label="Vocalist"
+                    name="vocalist"
+                    autoComplete="vocalist"
+                    autoFocus
+                />
+                <Button
+                    type="submit"
+                    fullWidth
+                    variant="contained"
+                    sx={{mt: 3, mb: 2, backgroundColor: 'green'}}
+                >
+                    Save
+                </Button>
+            </Box>
+        </Modal>
+</div>
+)
+    ;
 }

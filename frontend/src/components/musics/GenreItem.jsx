@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography';
 
 export default function GenreItem({item}) {
 	return (
-		<Card sx={{ maxWidth: 345,backgroundColor:"#2b3038",color:"#b4c4db",textAlign:"center" }}>
+		<Card sx={{ maxWidth: 345,backgroundColor:"#2b3038",color:"#b4c4db",textAlign:"center",height:"68px" }}>
 			<CardContent>
 				<Typography gutterBottom variant="h5" component="div">
 					{item}
