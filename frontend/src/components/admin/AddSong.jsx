@@ -6,6 +6,7 @@ import {Add} from "@mui/icons-material";
 import AdminSong from "../../services/admin.song.jsx";
 import {useFormik} from "formik";
 import {useState} from "react";
+import FileUpload from "../FileUpload.jsx";
 
 const style = {
     position: 'absolute',
@@ -40,6 +41,8 @@ export default function AddSong(props) {
             composer: "",
             songWriter: "",
             vocalist: "",
+            fileUrl:"",
+            imageUrl:""
         },
         onSubmit: (values) => {
             let songData = {
@@ -48,6 +51,8 @@ export default function AddSong(props) {
                 composer: values.composer,
                 songWriter: values.songWriter,
                 vocalist: values.vocalist,
+                fileUrl:values.fileUrl,
+                imageUrl:values.imageUrl
             }
             AdminSong.addSong(songData)
                 .then(() => {
@@ -140,6 +145,8 @@ export default function AddSong(props) {
                         autoComplete="vocalist"
                         autoFocus
                     />
+                    <FileUpload setValue={formAdd.setFieldValue} inputType="fileUrl" />
+                    <FileUpload setValue={formAdd.setFieldValue} inputType="imageUrl" />
                     <Button
                         type="submit"
                         fullWidth

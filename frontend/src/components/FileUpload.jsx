@@ -1,13 +1,10 @@
-import {useEffect, useState} from 'react';
+import { useState} from 'react';
 
-const FileUpload = () => {
+const FileUpload = ({inputType,setValue}) => {
 	const [selectedFile, setSelectedFile] = useState(null);
 	const handleFileChange = (event) => {
 		setSelectedFile(event.target.files[0]);
 	};
-	useEffect(()=>{
-		console.log(selectedFile)
-	})
 	const handleUpload = async () => {
 		if (!selectedFile) return;
 
@@ -20,7 +17,8 @@ const FileUpload = () => {
 				body: formData,
 			});
 			const data = await response.json();
-			console.log(data);
+			console.log(data.firebaseUrl)
+			setValue(inputType,data.firebaseUrl,false)
 		} catch (error) {
 			console.error(error);
 		}
@@ -28,8 +26,9 @@ const FileUpload = () => {
 
 	return (
 		<div>
+			<label>{inputType}:  </label>
 			<input type="file" onChange={handleFileChange} />
-			<button onClick={handleUpload}>Upload</button>
+			<p style={{cursor:"pointer"}} onClick={handleUpload}>Upload</p>
 		</div>
 	);
 };

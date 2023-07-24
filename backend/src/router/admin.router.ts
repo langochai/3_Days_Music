@@ -1,6 +1,8 @@
 import express from "express";
 import {AdminController} from "../controllers/admin/admin.controller";
 import FirebaseController from "../controllers/firebase.controller";
+import multer from "multer";
+const upload = multer()
 
 const adminRouter = express.Router();
 
@@ -14,6 +16,6 @@ adminRouter.post("/song",AdminController.addSong)
 adminRouter.put("/song/:songId",AdminController.updateSong)
 adminRouter.delete("/song/:songId",AdminController.deleteSong)
 
-adminRouter.post("/upload",FirebaseController.getUrlFile)
+adminRouter.post("/upload",upload.single('file'),FirebaseController.getUrlFile)
 
 export default adminRouter

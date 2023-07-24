@@ -24,7 +24,7 @@ export function App() {
             <Route path='/' element={<Home/>}/>
             <Route path='/login' element={<SignInSide/>}/>
             <Route path='/register' element={<SignUp/>}/>
-            {userLogin.role && userLogin.role === 'admin' ? (
+            {userLogin && userLogin.role === 'admin' ? (
                 <Route path='/admin/list-song' element={<ManagerSong/>}/>
             ) : (
                 <Route path="*" element={<Navigate to="/"/>}/>
