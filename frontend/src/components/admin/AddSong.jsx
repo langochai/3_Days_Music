@@ -53,6 +53,7 @@ export default function AddSong(props) {
                 .then(() => {
                     loadSongs()
                     handleClose()
+                    formAdd.resetForm()
                 })
                 .catch((err) => {
                     console.log(err)
