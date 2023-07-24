@@ -32,10 +32,10 @@ export default function MediaControlCard() {
             <Box sx={{display: 'flex', flexDirection: 'column', width: '100%'}}>
                 <CardContent sx={{flex: '1 0 auto'}}>
                     <Typography component="div" color="white" variant="h5">
-                        {tracks[currentTrackIndex].title}
+                        {tracks[currentTrackIndex].songName}
                     </Typography>
                     <Typography variant="subtitle1" color="white" component="div">
-                        {tracks[currentTrackIndex].artist}
+                        {tracks[currentTrackIndex].composer}
                     </Typography>
                 </CardContent>
                 <Box sx={{display: 'flex', alignItems: 'center', pl: 1, pb: 1}}>
