@@ -46,7 +46,6 @@ export default function MainViewContainer() {
     return (
         <>
             <div className={"main-view-container"}>
-                <NavBar/>
                 <div style={{padding: " 20px 30px ", display: "flex", flexWrap: "wrap"} }>
                     {img.map((item, index) => (
                         <Card key={index} sx={{margin: "20px", maxWidth: 345, backgroundColor: "#202020",color:"white"}}>

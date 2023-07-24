@@ -31,7 +31,7 @@ body{
 .main-view-container{
     background-color: #121212 ;
     margin-left: 240px ;
-    border-radius: 20px;
+    border-radius: 0px 0px 20px 20px;
     height:130vh;
 }
 

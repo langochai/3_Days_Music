@@ -34,11 +34,11 @@ export default function ListSong() {
                             <TableRow >
                                 <TableCell sx={{ color : "white"}}>id</TableCell>
                                 <TableCell sx={{ color : "white"}} align="left">Song Name</TableCell>
-                                <TableCell align="left">Genre</TableCell>
-                                <TableCell align="left">Song Writer</TableCell>
-                                <TableCell align="left">Vocalist</TableCell>
-                                <TableCell align="left">Edit</TableCell>
-                                <TableCell align="left">Delete</TableCell>
+                                <TableCell sx={{ color : "white"}} align="left">Genre</TableCell>
+                                <TableCell sx={{ color : "white"}} align="left">Song Writer</TableCell>
+                                <TableCell sx={{ color : "white"}} align="left">Vocalist</TableCell>
+                                <TableCell sx={{ color : "white"}} align="left">Edit</TableCell>
+                                <TableCell sx={{ color : "white"}} align="left">Delete</TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
@@ -47,15 +47,15 @@ export default function ListSong() {
                                     key={row._id}
                                     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                                 >
-                                    <TableCell component="th" scope="row">
+                                    <TableCell sx={{ color : "white"}} component="th" scope="row">
                                         {row._id}
                                     </TableCell>
-                                    <TableCell align="left">{row.songName}</TableCell>
-                                    <TableCell align="left">{row.genre}</TableCell>
-                                    <TableCell align="left">{row.songWriter}</TableCell>
-                                    <TableCell align="left">{row.vocalist}</TableCell>
-                                    <TableCell align="left"><Edit/></TableCell>
-                                    <TableCell align="left"><Delete/></TableCell>
+                                    <TableCell sx={{ color : "white"}} align="left">{row.songName}</TableCell>
+                                    <TableCell sx={{ color : "white"}} align="left">{row.genre}</TableCell>
+                                    <TableCell sx={{ color : "white"}} align="left">{row.songWriter}</TableCell>
+                                    <TableCell sx={{ color : "white"}} align="left">{row.vocalist}</TableCell>
+                                    <TableCell sx={{ color : "white"}} align="left"><Edit/></TableCell>
+                                    <TableCell sx={{ color : "white"}} align="left"><Delete/></TableCell>
                                 </TableRow>
                             ))}
                         </TableBody>
