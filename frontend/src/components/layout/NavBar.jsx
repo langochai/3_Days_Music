@@ -21,9 +21,8 @@ export default function NavBar() {
         dispatch(logout());
         navigate('/login');
     }
-
     return (
-        <Box sx={{flexGrow: 1}}>
+        <Box sx={{flexGrow: 1, marginLeft:"240px", marginBottom: "10px"}}>
             <AppBar position="static" sx={{backgroundColor: "#121212"}}>
                 <Toolbar>
                     <IconButton

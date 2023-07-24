@@ -31,4 +31,19 @@ export class SongController {
                 })
             })
     }
+    static async getGenreList(req,res){
+        await Songs.find({},{genre:1,_id:0})
+            .then(result => {
+                res.status(200).json({
+                    message: "Success",
+                    data: result
+                })
+            })
+            .catch(err => {
+                res.status(404).json({
+                    message: "Error",
+                    error: err
+                })
+            })
+    }
 }
