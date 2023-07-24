@@ -29,13 +29,15 @@ export default function ListSong() {
         loadSongs();
     }, [])
     const deleteSong = (id) => {
-        AdminSong.delete(id)
-            .then(() => {
-                loadSongs();
-            })
-            .catch((err) => {
-                console.log(err);
-            });
+        if (confirm('Are you sure you want to delete this song?')) {
+            AdminSong.delete(id)
+                .then(() => {
+                    loadSongs();
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        }
     }
     return (
 
@@ -67,7 +69,8 @@ export default function ListSong() {
                                     <TableCell sx={{color: "white"}} align="left"><EditSong
                                         id={song._id} song={song} setListSong={setListSong}
                                     /></TableCell>
-                                    <TableCell sx={{color: "white"}} align="left"><Button sx={{color:"red", '&:hover': {color: 'grey'}}}><Delete
+                                    <TableCell sx={{color: "white"}} align="left"><Button
+                                        sx={{color: "red", '&:hover': {color: 'grey'}}}><Delete
                                         onClick={() => deleteSong(song._id)}/></Button></TableCell>
                                 </TableRow>
                             ))}
