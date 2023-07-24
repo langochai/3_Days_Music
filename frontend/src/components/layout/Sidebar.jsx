@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 
 export default function Sidebar() {
     const userLoginJSON = localStorage.getItem('userLogin');
-    const userLogin = JSON.parse(userLoginJSON).role;
+    const userLogin = JSON.parse(userLoginJSON);
     return (
         <>
             <div className={"Left-sideBar"}>
@@ -27,7 +27,7 @@ export default function Sidebar() {
                             }}>Trang chủ</h3>
                         </Box>
                     </Link>
-                    {userLogin==="admin"?<Link to="/admin/list-song" style={{textDecoration: 'none'}}>
+                    {userLogin && userLogin.role==="admin"?<Link to="/admin/list-song" style={{textDecoration: 'none'}}>
                         <Box sx={{display: 'flex', alignItems: 'center', margin: "10px 20px "}}>
                             <List fontSize="large" sx={{
                                 color: 'white',
@@ -44,7 +44,7 @@ export default function Sidebar() {
                                 margin: 0
                             }}>Danh sách bài hát</h3>
                         </Box>
-                    </Link>:false}
+                    </Link>:<></>}
                 </div>
             </div>
         </>

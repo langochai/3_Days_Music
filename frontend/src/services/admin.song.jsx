@@ -6,7 +6,7 @@ class AdminSong {
     }
 
     static async edit(id, data) {
-        return await axios.post('http://localhost:3000/admin/song/'+ id, data);
+        return await axios.put('http://localhost:3000/admin/song/'+ id, data);
     }
 
     static async getSong() {

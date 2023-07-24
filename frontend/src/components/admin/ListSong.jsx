@@ -25,7 +25,7 @@ export default function ListSong() {
 
     useEffect(() => {
         loadSongs();
-    }, []);
+    }, [])
     const deleteSong = (id) => {
         AdminSong.delete(id)
             .then(() => {
@@ -43,7 +43,6 @@ export default function ListSong() {
                     <Table sx={{minWidth: 650, backgroundColor: "black"}} aria-label="simple table">
                         <TableHead>
                             <TableRow>
-                                <TableCell sx={{color: "white"}}>id</TableCell>
                                 <TableCell sx={{color: "white"}} align="left">Song Name</TableCell>
                                 <TableCell sx={{color: "white"}} align="left">Genre</TableCell>
                                 <TableCell sx={{color: "white"}} align="left">Song Writer</TableCell>
@@ -58,14 +57,13 @@ export default function ListSong() {
                                     key={song._id}
                                     sx={{'&:last-child td, &:last-child th': {border: 0}}}
                                 >
-                                    <TableCell sx={{color: "white"}} component="th" scope="row">
-                                        {song._id}
-                                    </TableCell>
                                     <TableCell sx={{color: "white"}} align="left">{song.songName}</TableCell>
                                     <TableCell sx={{color: "white"}} align="left">{song.genre}</TableCell>
                                     <TableCell sx={{color: "white"}} align="left">{song.songWriter}</TableCell>
                                     <TableCell sx={{color: "white"}} align="left">{song.vocalist}</TableCell>
-                                    <TableCell sx={{color: "white"}} align="left"><EditSong  id={song._id}/></TableCell>
+                                    <TableCell sx={{color: "white"}} align="left"><EditSong
+                                        id={song._id} song={song} setListSong={setListSong}
+                                    /></TableCell>
                                     <TableCell sx={{color: "white"}} align="left"><Button><Delete
                                         onClick={() => deleteSong(song._id)}/></Button></TableCell>
                                 </TableRow>

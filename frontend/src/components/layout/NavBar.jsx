@@ -5,26 +5,16 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import {Link, useNavigate} from "react-router-dom";
-import {useDispatch, useSelector} from "react-redux";
-import {logout} from "../../redux/features/auth/authSlice.jsx";
+import {Link} from "react-router-dom";
+import {useSelector} from "react-redux";
+import AccountMenu from "../AccountMenu.jsx";
 
 export default function NavBar() {
     const auth = useSelector(state => state.auth);
-    const userLoginJSON = localStorage.getItem('userLogin');
-    const userLogin = JSON.parse(userLoginJSON);
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
-    const handleLogout = () => {
-        localStorage.removeItem('token');
-        localStorage.removeItem('userLogin');
-        dispatch(logout());
-        navigate('/login');
-    }
 
     return (
-        <Box sx={{flexGrow: 1}}>
-            <AppBar position="static" sx={{backgroundColor: "#121212",marginLeft: "240px" , borderRadius: "20px 20px 0px 0px" ,width : "1262px"}}>
+        <Box sx={{flexGrow: 1, marginLeft:"240px", marginBottom: "10px"  ,position: "fixed" ,width:"82.9%"}}>
+            <AppBar position="static" sx={{backgroundColor: "rgba(4, 4, 4,0.9)"}}>
                 <Toolbar>
                     <IconButton
                         size="large"
@@ -38,15 +28,13 @@ export default function NavBar() {
                     <Typography variant="h6" component="div" sx={{flexGrow: 1}}>
                         Menu
                     </Typography>
-                    {userLogin && <p>{userLogin.lastName}</p>}
                     {!auth.isAuth ? (
                         <Link to='/login'>
-                            <Button color="inherit" sx={{textDecoration: 'none', color: "white"}}>Login</Button>
+                            <Button color="inherit">Login</Button>
                         </Link>
                     ) : (
-                        <Button color="inherit" onClick={handleLogout}>Logout</Button>
+                        <AccountMenu/>
                     )}
-
                 </Toolbar>
             </AppBar>
         </Box>

@@ -6,8 +6,8 @@ import NavBar from "../../components/layout/NavBar.jsx";
 export default function Home() {
     return (
         <div className={"body"}>
-            <Sidebar/>
             <NavBar/>
+            <Sidebar/>
             <MainViewContainer/>
             <MediaControlCard/>
         </div>
