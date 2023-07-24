@@ -41,7 +41,7 @@ export default function NavBar() {
                     {userLogin && <p>{userLogin.lastName}</p>}
                     {!auth.isAuth ? (
                         <Link to='/login'>
-                            <Button color="inherit">Login</Button>
+                            <Button color="inherit" sx={{textDecoration: 'none', color: "white"}}>Login</Button>
                         </Link>
                     ) : (
                         <Button color="inherit" onClick={handleLogout}>Logout</Button>
