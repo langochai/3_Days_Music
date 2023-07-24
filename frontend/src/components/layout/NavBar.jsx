@@ -13,7 +13,7 @@ export default function NavBar() {
     const auth = useSelector(state => state.auth);
 
     return (
-        <Box sx={{flexGrow: 1}}>
+        <Box sx={{flexGrow: 1, marginLeft:"240px", marginBottom: "10px"}}>
             <AppBar position="static" sx={{backgroundColor: "#121212"}}>
                 <Toolbar>
                     <IconButton

@@ -19,16 +19,18 @@ body{
 }
 .top-left-sideBar{
     background-color: #121212 ;
-
     border-radius: 20px;
     height: 250px;
     width: 211px;
     color: #f9f9f9;
-    position: fixed;
+    position: relative;
     left: 0;
+    top:-83px
 
 }
 .main-view-container{
+    max-height: 130vh;
+    max-width: 78vw;
     background-color: #121212 ;
     margin-left: 240px ;
     border-radius: 20px;
