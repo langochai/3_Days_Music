@@ -17,7 +17,7 @@ function MusicListAll() {
     return (
         <>
             <Grid item md={6} sx={{textAlign: "left"}}><h2>Music List</h2></Grid>
-            <Grid item md={6} sx={{textAlign: "right"}}><h2>Show all</h2></Grid>
+            <Grid item md={6} sx={{textAlign: "right"}}><h4>Show all</h4></Grid>
             {songs && songs.map((item, index) => {
                 if (index <= 5) {
                     return (

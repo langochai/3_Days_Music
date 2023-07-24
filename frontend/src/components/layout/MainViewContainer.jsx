@@ -7,7 +7,6 @@ export default function MainViewContainer() {
         <>
             <div className={"main-view-container"} style={{
                 padding: " 20px 30px "
-
             }}>
                 <Grid container spacing={2}>
                     <MusicListAll/>

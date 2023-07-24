@@ -2,16 +2,28 @@ import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
+import {setSong} from "../../redux/features/songs/songSlice.js";
+import {useDispatch} from "react-redux";
 
 function MusicItem({item}) {
+    const dispatch = useDispatch()
+    const handleClick = () =>{
+        console.log(1)
+        dispatch(setSong(item))
+    }
+    const handleMouseOver = () => {
+
+    }
     return (
         <>
             <Card sx={{ maxWidth: 190,maxHeight:240,backgroundColor:"#2b3038",color:"#b4c4db" }}>
                 <CardMedia
                     component="img"
-                    sx={{ height: 140 }}
+                    sx={{ height: 140, cursor:"pointer" }}
                     image={item.imageUrl}
                     title={item.songName}
+                    onClick={handleClick}
+                    onMouseOver={handleMouseOver}
                 />
                 <CardContent
                     sx={{height:100}}

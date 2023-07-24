@@ -21,11 +21,11 @@ function GenreList() {
 	return (
 		<>
 			<Grid item md={6} sx={{textAlign: "left"}}><h2>Genre List</h2></Grid>
-			<Grid item md={6} sx={{textAlign: "right"}}><h2>Show all</h2></Grid>
+			<Grid item md={6} sx={{textAlign: "right"}}><h4>Show all</h4></Grid>
 			{genres && genres.map((item, index) => {
 				if (index <= 5) {
 					return (
-						<Grid item xs={2} md={2} key={item._id}>
+						<Grid item xs={2} md={2} key={index}>
 							<GenreItem item={item}/>
 						</Grid>
 					)
