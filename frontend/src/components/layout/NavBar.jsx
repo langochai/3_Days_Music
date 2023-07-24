@@ -12,7 +12,6 @@ import AccountMenu from "../AccountMenu.jsx";
 export default function NavBar() {
     const auth = useSelector(state => state.auth);
 
-
     return (
         <Box sx={{flexGrow: 1}}>
             <AppBar position="static" sx={{backgroundColor: "#121212"}}>
