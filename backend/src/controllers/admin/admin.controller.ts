@@ -65,7 +65,7 @@ export class AdminController {
     }
 
     static async getSong(req, res) {
-        await Songs.findById(req.params.songID)
+        await Songs.findById(req.params.songId)
             .then(result => {
                 res.status(200).json({
                     message: "Success",
