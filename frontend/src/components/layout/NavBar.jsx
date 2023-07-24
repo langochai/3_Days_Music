@@ -13,25 +13,51 @@ export default function NavBar() {
     const auth = useSelector(state => state.auth);
 
     return (
-        <Box sx={{flexGrow: 1, marginLeft:"240px", marginBottom: "10px"}}>
-            <AppBar position="static" sx={{backgroundColor: "#121212"}}>
+        <Box sx={{flexGrow: 1, marginLeft: "330px", marginBottom: "10px", position: "fixed", width: "80%"}}>
+            <AppBar position="static" sx={{backgroundColor: "rgba(4, 4, 4,0.9)"}}>
                 <Toolbar>
-                    <IconButton
-                        size="large"
-                        edge="start"
-                        color="inherit"
-                        aria-label="menu"
-                        sx={{mr: 2}}
-                    >
-                        <MenuIcon/>
-                    </IconButton>
                     <Typography variant="h6" component="div" sx={{flexGrow: 1}}>
-                        Menu
                     </Typography>
                     {!auth.isAuth ? (
-                        <Link to='/login'>
-                            <Button color="inherit">Login</Button>
-                        </Link>
+                        <>
+                            <Link to='/register'>
+                                <Button color="inherit"
+                                        sx={{
+                                            backgroundColor: "black",
+                                            borderRadius: "30px",
+                                            color: "#fffa",
+                                            textDecoration: "none",
+                                            width: "120px",
+                                            height: "55px",
+                                            '&:hover': {
+                                                backgroundColor: "black",
+                                                color: "white",
+                                            },
+                                        }}
+                                >
+                                    <b>Sign up</b>
+                                </Button>
+                            </Link>
+                            <Link to='/login'>
+                                <Button color="inherit"
+                                        sx={{
+                                            backgroundColor: "white",
+                                            borderRadius: "30px",
+                                            color: "black",
+                                            textDecoration: "none",
+                                            width: "120px",
+                                            height: "55px",
+                                            '&:hover': {
+                                                backgroundColor: "white",
+                                                color: "black",
+                                                height: "60px",
+                                                width: "125px",
+                                            },
+                                        }}
+                                >
+                                    <b>Log in</b>
+                                </Button>
+                            </Link></>
                     ) : (
                         <AccountMenu/>
                     )}
