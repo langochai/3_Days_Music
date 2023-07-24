@@ -44,7 +44,7 @@ export default function MediaControlCard() {
                         layout="stacked-reverse"
                         style={{backgroundColor : "black", color: "white"}}
                         showSkipControls={true}
-                        showJumpControls={false}
+                        showJumpControls={true}
                         onClickPrevious={handlePreTrack}
                         onClickNext={handleNextTrack}
                         onEnded={handleNextTrack}
