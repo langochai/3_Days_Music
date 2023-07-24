@@ -2,7 +2,6 @@ import {useEffect, useState} from 'react';
 
 const FileUpload = () => {
 	const [selectedFile, setSelectedFile] = useState(null);
-
 	const handleFileChange = (event) => {
 		setSelectedFile(event.target.files[0]);
 	};
@@ -16,7 +15,7 @@ const FileUpload = () => {
 		formData.append('file', selectedFile);
 
 		try {
-			const response = await fetch("http://localhost:3000/api/upload", {
+			const response = await fetch("http://localhost:3000/admin/upload", {
 				method: 'POST',
 				body: formData,
 			});

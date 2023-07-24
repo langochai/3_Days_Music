@@ -22,7 +22,7 @@ export default function MediaControlCard() {
     };
 
     return (
-        <Card sx={{display: 'flex',position:"fixed", backgroundColor:"black", height:"151px" }} className='card-container'>
+        <Card sx={{display: 'flex',position:"fixed", backgroundColor:"black", height:"150px" }} className='card-container'>
             <CardMedia
                 component="img"
                 sx={{width: 151}}
@@ -31,10 +31,10 @@ export default function MediaControlCard() {
             />
             <Box sx={{display: 'flex', flexDirection: 'column', width: '100%'}}>
                 <CardContent sx={{flex: '1 0 auto'}}>
-                    <Typography component="div" color="white" variant="h5">
+                    <Typography component="div" color="white"  variant="h5">
                         {tracks[currentTrackIndex].songName}
                     </Typography>
-                    <Typography variant="subtitle1" color="white" component="div">
+                    <Typography variant="subtitle1" color="white" height="6px" component="div">
                         {tracks[currentTrackIndex].composer}
                     </Typography>
                 </CardContent>
@@ -44,7 +44,7 @@ export default function MediaControlCard() {
                         layout="stacked-reverse"
                         style={{backgroundColor : "black", color: "white"}}
                         showSkipControls={true}
-                        showJumpControls={false}
+                        showJumpControls={true}
                         onClickPrevious={handlePreTrack}
                         onClickNext={handleNextTrack}
                         onEnded={handleNextTrack}
