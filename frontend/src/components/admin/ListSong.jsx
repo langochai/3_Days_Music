@@ -6,10 +6,11 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import {Delete} from "@mui/icons-material";
+import {Delete,Add} from "@mui/icons-material";
 import AdminSong from "../../services/admin.song.jsx";
 import Button from "@mui/material/Button";
 import EditSong from "./EditSong.jsx";
+import {Link} from "react-router-dom";
 
 export default function ListSong() {
     const [listSong, setListSong] = useState([])
@@ -39,6 +40,7 @@ export default function ListSong() {
 
         <div className={"main-view-container"}>
             <div style={{padding: " 70px 16px "}}>
+                <Link><Button sx={{backgroundColor:"blue",marginBottom:"10px"}}><Add/></Button></Link>
                 <TableContainer component={Paper}>
                     <Table sx={{minWidth: 650, backgroundColor: "black"}} aria-label="simple table">
                         <TableHead>

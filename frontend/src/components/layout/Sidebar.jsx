@@ -11,13 +11,21 @@ export default function Sidebar() {
                 <div className={"top-left-sideBar"}>
                     <Link to="/" style={{textDecoration: 'none'}}>
                         <Box sx={{display: 'flex', alignItems: 'center', margin: "10px 20px "}}>
-                            <Home fontSize="large" sx={{
+                            {/*<Home fontSize="large" sx={{*/}
+                            {/*    color: 'white',*/}
+                            {/*    borderRadius: '50%',*/}
+                            {/*    marginRight: '10px',*/}
+                            {/*    padding: '5px',*/}
+                            {/*    backgroundColor: '#121212',*/}
+                            {/*}}/>*/}
+                            <img src="/logo.png" style={{
                                 color: 'white',
                                 borderRadius: '50%',
                                 marginRight: '10px',
                                 padding: '5px',
                                 backgroundColor: '#121212',
-                            }}/>
+                                width: '40px'
+                            }} alt="error"/>
                             <h3 style={{
                                 color: 'white',
                                 borderRadius: '5px',
