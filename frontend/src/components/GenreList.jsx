@@ -1,8 +1,7 @@
 import {useEffect, useState} from "react";
 import Grid from "@mui/material/Grid";
-// import MusicItem from "./musics/MusicItem.jsx";
 import SongService from "../services/song.service.js";
-import MusicItem from "./musics/MusicItem.jsx";
+import GenreItem from "./musics/GenreItem.jsx";
 
 function GenreList() {
 	const [genres, setGenres] = useState([]);
@@ -27,7 +26,7 @@ function GenreList() {
 				if (index <= 5) {
 					return (
 						<Grid item xs={2} md={2} key={item._id}>
-							<MusicItem item={item}/>
+							<GenreItem item={item}/>
 						</Grid>
 					)
 				}
