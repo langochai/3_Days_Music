@@ -40,7 +40,7 @@ export class AuthController {
             }
 
             const token = jwt.sign({userId: user._id}, '1234567890', {
-                expiresIn: '3600',
+                expiresIn: '5',
             });
 
             res.status(200).json({

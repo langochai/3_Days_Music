@@ -223,7 +223,7 @@ export default function SignUp() {
                             </Button>
                             <Grid container justifyContent="flex-end">
                                 <Grid item>
-                                    <RouterLink to='/login' style={{color : "black", textDecoration : "none"}}>
+                                    <RouterLink to='/login' style={{color : "black"}}>
                                         Already have an account? Sign in
                                     </RouterLink>
                                 </Grid>
