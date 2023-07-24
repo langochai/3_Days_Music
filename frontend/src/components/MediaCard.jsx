@@ -22,11 +22,11 @@ export default function MediaControlCard() {
     };
 
     return (
-        <Card sx={{display: 'flex',position:"fixed", backgroundColor:"black" }} className='card-container'>
+        <Card sx={{display: 'flex',position:"fixed", backgroundColor:"black", height:"151px" }} className='card-container'>
             <CardMedia
                 component="img"
                 sx={{width: 151}}
-                image="https://mui.com/static/images/cards/live-from-space.jpg"
+                image={tracks[currentTrackIndex].imageUrl}
                 alt="Live from space album cover"
             />
             <Box sx={{display: 'flex', flexDirection: 'column', width: '100%'}}>
