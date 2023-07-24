@@ -1,8 +1,11 @@
 import {Box} from '@mui/material';
 import {Home} from '@mui/icons-material';
 import {Link} from 'react-router-dom';
+import {useSelector} from "react-redux";
 
 export default function Sidebar() {
+    const auth = useSelector(state => state.auth)
+    console.log(auth)
     return (
         <>
             <div className={"Left-sideBar"}>
@@ -15,14 +18,14 @@ export default function Sidebar() {
                                 marginRight: '10px',
                                 padding: '5px',
                                 backgroundColor: '#121212',
-                            }}/> {/* Chỉnh sửa kiểu chữ và bo góc cho biểu tượng "home" */}
+                            }}/>
                             <h3 style={{
                                 color: 'white',
                                 borderRadius: '5px',
                                 padding: '5px',
                                 backgroundColor: '#121212',
                                 margin: 0
-                            }}>Trang chủ</h3> {/* Chỉnh sửa kiểu chữ, bo góc và loại bỏ gạch chân cho văn bản */}
+                            }}>Trang chủ</h3>
                         </Box>
                     </Link>
                 </div>
