@@ -1,23 +1,18 @@
-import { useState} from 'react';
-
-const FileUpload = ({inputType,setValue}) => {
-	const [selectedFile, setSelectedFile] = useState(null);
-	const handleFileChange = (event) => {
-		setSelectedFile(event.target.files[0]);
-	};
-	const handleUpload = async () => {
-		if (!selectedFile) return;
-
+const FileUpload = ({inputType,setValue,whenDone}) => {
+	const handleFileChange = async (event) => {
 		const formData = new FormData();
-		formData.append('file', selectedFile);
+		formData.append('file', event.target.files[0]);
 
 		try {
+			let data
 			const response = await fetch("http://localhost:3000/admin/upload", {
 				method: 'POST',
 				body: formData,
 			});
-			const data = await response.json();
+			data = await response.json();
 			console.log(data.firebaseUrl)
+			if (data) whenDone(true)
+			else whenDone(false)
 			setValue(inputType,data.firebaseUrl,false)
 		} catch (error) {
 			console.error(error);
@@ -26,9 +21,8 @@ const FileUpload = ({inputType,setValue}) => {
 
 	return (
 		<div>
-			<label>{inputType}:  </label>
+			<label>{inputType==="fileUrl"? "File" : "Image"}:  </label>
 			<input type="file" onChange={handleFileChange} />
-			<p style={{cursor:"pointer"}} onClick={handleUpload}>Upload</p>
 		</div>
 	);
 };
