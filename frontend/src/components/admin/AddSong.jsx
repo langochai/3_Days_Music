@@ -35,7 +35,10 @@ export default function AddSong(props) {
                 console.log(err);
             });
     };
-
+    const resetFormFileAndImage = () =>{
+        setHaveFile(false)
+        setHaveImage(false)
+    }
     const formAdd = useFormik({
         initialValues: {
             songName: "",
@@ -155,6 +158,7 @@ export default function AddSong(props) {
                         variant="contained"
                         sx={{mt: 3, mb: 2, backgroundColor: 'green'}}
                         disabled= {haveFile && haveImage ? false : true}
+                        onClick={resetFormFileAndImage}
                     >
                         Save
                     </Button>
