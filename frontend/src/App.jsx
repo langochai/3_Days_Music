@@ -7,6 +7,8 @@ import {useEffect} from "react";
 import {setAuth} from "./redux/features/auth/authSlice.jsx";
 import SignUp from "./pages/register/Register.jsx";
 import ManagerSong from "./pages/admin/ManagerSong.jsx";
+import AllSong from "./components/AllSong.jsx";
+import MainViewContainer from "./components/layout/MainViewContainer.jsx";
 
 export function App() {
     const dispatch = useDispatch();
@@ -21,7 +23,11 @@ export function App() {
 
     return (
         <Routes>
-            <Route path='/' element={<Home/>}/>
+            <Route path='/' element={<Home/>}>
+                <Route path='/' element={<MainViewContainer/>}/>
+                <Route path='/song/list' element={<AllSong/>}/>
+            </Route>
+
             <Route path='/login' element={<SignInSide/>}/>
             <Route path='/register' element={<SignUp/>}/>
             {userLogin && userLogin.role === 'admin' ? (

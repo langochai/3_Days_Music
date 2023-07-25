@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 import Grid from "@mui/material/Grid";
 import SongService from "../services/song.service.js";
 import GenreItem from "./musics/GenreItem.jsx";
+import {Link} from "react-router-dom";
 
 function GenreList() {
     const [genres, setGenres] = useState([]);
@@ -21,7 +22,11 @@ function GenreList() {
     return (
         <>
             <Grid item md={6} sx={{textAlign: "left"}}><h2>Genre List</h2></Grid>
-            <Grid item md={6} sx={{textAlign: "right"}}><h4>Show all</h4></Grid>
+            <Grid item md={6} sx={{textAlign: "right"}}>
+                <Link to='/genre/list' style={{textDecoration: 'none'}}>
+                    <h4>Show all</h4>
+                </Link>
+            </Grid>
             {genres && genres.map((item, index) => {
                 if (index <= 5) {
                     return (
