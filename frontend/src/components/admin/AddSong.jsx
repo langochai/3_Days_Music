@@ -64,6 +64,7 @@ export default function AddSong(props) {
                     loadSongs()
                     handleClose()
                     formAdd.resetForm()
+                    resetFormFileAndImage()
                 })
                 .catch((err) => {
                     console.log(err)
@@ -158,7 +159,6 @@ export default function AddSong(props) {
                         variant="contained"
                         sx={{mt: 3, mb: 2, backgroundColor: 'green'}}
                         disabled= {haveFile && haveImage ? false : true}
-                        onClick={resetFormFileAndImage}
                     >
                         Save
                     </Button>
