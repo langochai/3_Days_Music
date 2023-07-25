@@ -8,11 +8,7 @@ import {useDispatch} from "react-redux";
 function MusicItem({item}) {
     const dispatch = useDispatch()
     const handleClick = () =>{
-        console.log(1)
         dispatch(setSong(item))
-    }
-    const handleMouseOver = () => {
-
     }
     return (
         <>
@@ -23,7 +19,6 @@ function MusicItem({item}) {
                     image={item.imageUrl}
                     title={item.songName}
                     onClick={handleClick}
-                    onMouseOver={handleMouseOver}
                 />
                 <CardContent
                     sx={{height:100}}
