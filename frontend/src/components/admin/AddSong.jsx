@@ -22,6 +22,8 @@ const style = {
 
 export default function AddSong(props) {
     const [open, setOpen] = useState(false);
+    const [haveFile,setHaveFile] = useState(false)
+    const [haveImage,setHaveImage]=useState(false)
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
     const loadSongs = () => {
@@ -145,13 +147,14 @@ export default function AddSong(props) {
                         autoComplete="vocalist"
                         autoFocus
                     />
-                    <FileUpload setValue={formAdd.setFieldValue} inputType="fileUrl" />
-                    <FileUpload setValue={formAdd.setFieldValue} inputType="imageUrl" />
+                    <FileUpload setValue={formAdd.setFieldValue} inputType="fileUrl" whenDone={setHaveFile} />
+                    <FileUpload setValue={formAdd.setFieldValue} inputType="imageUrl" whenDone = {setHaveImage}/>
                     <Button
                         type="submit"
                         fullWidth
                         variant="contained"
                         sx={{mt: 3, mb: 2, backgroundColor: 'green'}}
+                        disabled= {haveFile && haveImage ? false : true}
                     >
                         Save
                     </Button>
