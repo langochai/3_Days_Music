@@ -5,9 +5,7 @@ import GenreList from "../GenreList.jsx";
 export default function MainViewContainer() {
     return (
         <>
-            <div className={"main-view-container"} style={{
-                padding: " 70px 30px "
-            }}>
+            <div className={"main-view-container"} style={{padding: " 70px 30px "}}>
                 <Grid container spacing={2}>
                     <MusicListAll/>
                     <GenreList/>
